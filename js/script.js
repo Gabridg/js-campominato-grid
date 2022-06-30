@@ -9,8 +9,6 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 Procediamo milestone per milestone senza invertire l'ordine.
 Cerchiamo di fare almeno un commit per ogni milestone!
 
-#MILESTONE 2
-Rimuoviamo le celle che abbiamo inserito nell'HTML in modo da generarle tramite JS. Al click del bottone play, vengono generate 100 celle in 10 righe da 10 celle ciascuna.
 #MILESTONE 3
 In ogni cella, deve comparire il numero corrispondente, in ordine da 1 a 100;
 #MILESTONE 4
@@ -29,3 +27,25 @@ Di cosa ho bisogno per generare i numeri?
 Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti.
 Le validazioni e i controlli possiamo farli anche in un secondo momento
 */
+
+const playButton = document.getElementById('play-button');
+const griglia = document.getElementById('griglia');
+
+function createCell() {
+    const cell = document.createElement('div');
+    cell.className = 'box';
+
+    return cell;
+}
+
+const rows = 10;
+const cols = 10;
+const totalCols = rows * cols;
+
+playButton.addEventListener('click', function () {
+    for (let i = 0; i < totalCols; i++) {
+        const newCols = createCell();
+
+        griglia.appendChild(newCols);
+    }
+})
