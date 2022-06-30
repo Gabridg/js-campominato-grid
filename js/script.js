@@ -9,8 +9,7 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 Procediamo milestone per milestone senza invertire l'ordine.
 Cerchiamo di fare almeno un commit per ogni milestone!
 
-#MILESTONE 4
-Al click sulla cella, stampiamo il numero della cella cliccata in console, poi coloriamo la cella d'azzurro!
+
 # BONUS
 Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà:
 - con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
@@ -45,6 +44,10 @@ playButton.addEventListener('click', function () {
     for (let i = 1; i <= totalCols; i++) {
         const newCols = createCell(i);
 
+        newCols.addEventListener('click', function (event) {
+            event.target.classList.toggle('clicked');
+            console.log('Numero Casella Scelta: ' + newCols.innerText)
+        })
         griglia.appendChild(newCols);
     }
 })

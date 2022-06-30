@@ -33,3 +33,7 @@ header .row {
     justify-content: space-around;
     align-items: center;
 }
+
+.clicked {
+    background-color: #80BDE3;
+}
