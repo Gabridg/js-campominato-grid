@@ -9,8 +9,6 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 Procediamo milestone per milestone senza invertire l'ordine.
 Cerchiamo di fare almeno un commit per ogni milestone!
 
-#MILESTONE 3
-In ogni cella, deve comparire il numero corrispondente, in ordine da 1 a 100;
 #MILESTONE 4
 Al click sulla cella, stampiamo il numero della cella cliccata in console, poi coloriamo la cella d'azzurro!
 # BONUS
@@ -31,9 +29,10 @@ Le validazioni e i controlli possiamo farli anche in un secondo momento
 const playButton = document.getElementById('play-button');
 const griglia = document.getElementById('griglia');
 
-function createCell() {
+function createCell(number) {
     const cell = document.createElement('div');
     cell.className = 'box';
+    cell.innerText = number;
 
     return cell;
 }
@@ -43,8 +42,8 @@ const cols = 10;
 const totalCols = rows * cols;
 
 playButton.addEventListener('click', function () {
-    for (let i = 0; i < totalCols; i++) {
-        const newCols = createCell();
+    for (let i = 1; i <= totalCols; i++) {
+        const newCols = createCell(i);
 
         griglia.appendChild(newCols);
     }

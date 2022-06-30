@@ -12,6 +12,9 @@ main {
     border: 1px solid black;
     height: 100px;
     width: 100px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
 }
 
 .container {
